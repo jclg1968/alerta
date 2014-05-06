@@ -1,0 +1,301 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Ayuda Ciudadana</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.2.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+    <div data-role="header" data-theme="a">
+    <h1>Mensaje Recibido</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p class="ui-title" id="respuestaServidor" style="font-size:12px;"></p>
+        <div id="formulario"></div>
+    </div>
+</div>
+<div id="form1">
+<form id="masDatos" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
+	<fieldset>	
+		<label for="descripcion">Descripcion de Incidencia:</label>
+		<textarea cols="40" rows="8" name="descripcion" id="descripcion"></textarea>
+		<label for="subtipos" class="select">Escoja Subtipo de Evento:</label>
+		<select name="subtipos" id="subtipos" data-native-menu="false">
+		    <option>Haga su seleccion</option>
+		    <option value="standard">Robo</option>
+		    <option value="rush">extorcion</option>
+		    <option value="express">Secuestro</option>
+		    <option value="overnight">Tiros</option>
+		</select>
+		<a href="#" id="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Enviar</a>
+		<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cerrar</a>
+	</fieldset>
+</form>     
+</div>
+
+<div data-role="page" id="home">
+
+	<div data-role="panel" id="mypanelIzqH" data-position="left" data-display="overlay">
+		<p>Los datos personales de el usuario para ser vistos por el mismo.</p>
+    	<label for="line">En Linea</label>
+		<select name="line" id="flip-2" data-role="slider" class="ui-btn-inline">
+		    <option value="off">Off</option>
+		    <option value="on">On</option>
+		</select>
+		<label for="datos">Datos</label>
+		<select name="datos" id="flip-2" data-role="slider" class="ui-btn-inline">
+		    <option value="off">Off</option>
+		    <option value="on">On</option>
+		</select>	
+		<label for="trazado">Trazado</label>
+		<select name="trazado" id="flip-2" data-role="slider" class="ui-btn-inline">
+		    <option value="off">Off</option>
+		    <option value="on">On</option>
+		</select>	
+		<label for="datos">Datos</label>
+		<select name="datos" id="flip-2" data-role="slider" class="ui-btn-inline">
+		    <option value="off">Off</option>
+		    <option value="on">On</option>
+		</select>			
+	</div><!-- /panel -->
+	<div data-role="panel" id="mypanelDerH" data-position="right" data-display="overlay">
+    	<ul data-role="listview" data-inset="true">
+		    <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+		    <li><a href="index.html">
+		    <h2>Stephen Weber</h2>
+		    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+		    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		    <li><a href="index.html">
+		    <h2>jQuery Team</h2>
+		    <p><strong>Boston Conference Planning</strong></p>
+		    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+		        <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+		    </a></li>
+		    <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+		    <li><a href="index.html">
+		    <h2>Avery Walker</h2>
+		    <p><strong>Re: Dinner Tonight</strong></p>
+		    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+		        <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+		    </a></li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header" data-theme="a" data-position="fixed">
+	<h3>ALERTA - Home</h3>
+	<div data-role="navbar">
+	    <ul>
+	        <li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
+	        <li><a href="#buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
+	        <li><a href="#config" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
+	    </ul>
+	</div><!-- /navbar -->
+	</div><!-- /header -->
+	<div role="main" class="ui-content">
+		<fieldset class="ui-grid-a">
+		    <div class="ui-block-a">
+		    	<a href="#" class="ui-btn ui-shadow ui-corner-all btn-home" id="policia" >
+					<img src="images/27302.png" width="96px" height="96px">
+				</a>
+		    </div>
+		    <div class="ui-block-b">
+				<a href="#" class="ui-btn ui-shadow ui-corner-all btn-home" id="ambulancia">
+					<img src="images/26746.png" width="96px" height="96px">
+				</a>
+		    </div>
+		    <div class="ui-block-a">
+		    	<a href="#" class="ui-btn ui-shadow ui-corner-all btn-home" id="mecanico">
+					<img src="images/Car-Repair-Blue-2-icon.png" width="96px" height="96px">
+				</a>
+		    </div>
+		    <div class="ui-block-b">
+				<a href="#" class="ui-btn ui-shadow ui-corner-all btn-home btn-home" id="bombero">
+					<img src="images/3649.png" width="96px" height="96px">
+				</a>
+		    </div>
+		</fieldset>
+	</div><!-- /content -->
+
+	<div data-role="footer" class="nav-glyphish-example" data-theme="b" data-position="fixed">
+		<div data-role="navbar" class="nav-glyphish-example" data-grid="a">
+			<ul>
+			    <li><a href="#mypanelDerH"  class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-top">Mensajes</a></li>			    
+			    <li><a href="#mypanelIzqH"  class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-top">Usuario</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- /page -->
+
+<div data-role="page" id="buscar">
+	<div data-role="panel" id="mypanelIzqS" data-position="left" data-display="overlay">
+    	<p>Los datos personales de el usuario para ser vistos por el mismo.</p>
+    	<label for="line">En Linea</label>
+			<select name="line" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>
+		<label for="datos">Datos</label>
+			<select name="datos" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>	
+		<label for="trazado">Trazado</label>
+			<select name="trazado" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>	
+		<label for="datos">Datos</label>
+			<select name="datos" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>	
+    	
+	</div><!-- /panel -->
+	<div data-role="panel" id="mypanelDerS" data-position="right" data-display="overlay">
+    	<ul data-role="listview" data-inset="true">
+		    <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+		    <li><a href="index.html">
+		    <h2>Stephen Weber</h2>
+		    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+		    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		    <li><a href="index.html">
+		    <h2>jQuery Team</h2>
+		    <p><strong>Boston Conference Planning</strong></p>
+		    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+		        <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+		    </a></li>
+		    <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+		    <li><a href="index.html">
+		    <h2>Avery Walker</h2>
+		    <p><strong>Re: Dinner Tonight</strong></p>
+		    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+		        <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+		    </a></li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header" style="overflow:hidden;" data-position="fixed">
+		<h1>ALERTA - Buscar</h1>
+		<div data-role="navbar">
+		    <ul>
+		        <li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
+		        <li><a href="#buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
+		        <li><a href="#config" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
+		    </ul>
+		</div><!-- /navbar -->
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..." data-inset="true">
+		    <li><a href="#">Apple</a></li>
+		    <li><a href="#">Banana</a></li>
+		    <li><a href="#">Cherry</a></li>
+		    <li><a href="#">Cranberry</a></li>
+		    <li><a href="#">Grape</a></li>
+		</ul>
+	</div>
+
+	<div data-role="footer" class="nav-glyphish-example" data-theme="b" data-position="fixed">
+		<div data-role="navbar" class="nav-glyphish-example" data-grid="a">
+			<ul>
+			    <li><a href="#mypanelDerS"  class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-top">Mensajes</a></li>
+			    <li><a href="#mypanelIzqS"  class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-top">Usuario</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- /page -->
+
+<div data-role="page" id="config">
+	<div data-role="panel" id="mypanelIzqC" data-position="left" data-display="overlay">
+    	<p>Los datos personales de el usuario para ser vistos por el mismo.</p>
+    	<label for="line">En Linea</label>
+			<select name="line" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>
+		<label for="datos">Datos</label>
+			<select name="datos" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>	
+		<label for="trazado">Trazado</label>
+			<select name="trazado" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>	
+		<label for="datos">Datos</label>
+			<select name="datos" id="flip-2" data-role="slider" class="ui-btn-inline">
+			    <option value="off">Off</option>
+			    <option value="on">On</option>
+			</select>	
+	</div><!-- /panel -->
+	<div data-role="panel" id="mypanelDerC" data-position="right" data-display="overlay">
+    	<ul data-role="listview" data-inset="true">
+		    <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+		    <li><a href="index.html">
+		    <h2>Stephen Weber</h2>
+		    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+		    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+		        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+		    </a></li>
+		    <li><a href="index.html">
+		    <h2>jQuery Team</h2>
+		    <p><strong>Boston Conference Planning</strong></p>
+		    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+		        <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+		    </a></li>
+		    <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+		    <li><a href="index.html">
+		    <h2>Avery Walker</h2>
+		    <p><strong>Re: Dinner Tonight</strong></p>
+		    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+		        <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+		    </a></li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header" style="overflow:hidden;" data-position="fixed">
+		<h1>ALERTA - Configuracion</h1>
+		<div data-role="navbar">
+		    <ul>
+		        <li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
+		        <li><a href="#buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
+		        <li><a href="#config" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
+		    </ul>
+		</div><!-- /navbar -->
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div class="ui-grid-b">
+		    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
+		    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
+		    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
+		    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
+		    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
+		    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
+		    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
+		    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
+		    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
+		</div><!-- /grid-c -->
+	</div><!-- /content -->
+
+	<div data-role="footer" class="nav-glyphish-example" data-theme="b" data-position="fixed">
+		<div data-role="navbar" class="nav-glyphish-example" data-grid="a">
+			<ul>
+			    <li><a href="#mypanelDerC"  class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-top">Mensajes</a></li>			    
+			    <li><a href="#mypanelIzqC"  class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-top">Usuario</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- /page -->
+
+
+</body>
+	<script src="js/index.js"></script>
+</html>
