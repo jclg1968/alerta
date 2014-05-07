@@ -10,39 +10,7 @@
 
 <body>
 
-<div data-role="dialog" data-position-to="window" id="popupConfirm" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:300px;">
-    <div data-role="header" data-theme="a">
-    	<h1>Confirmacion Datos</h1>
-    </div>
-    <div role="main" class="ui-content">
-        <h3 class="ui-title">Sus Datos se guardaron satisfactoriamente</h3>
-   		<p>Puede editar estos datos en el mismo formulario sustituyendo los viejos datos y volviendo a guardar.</p>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b cerrar" data-rel="back">Aceptar</a>
-    </div>
-</div>
 
-<div data-role="dialog"  data-position-to="window" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:300px;">
-    <div data-role="header" data-theme="a"><h1>Mensaje Recibido</h1></div>
-    <div role="main" class="ui-content">
-        <p class="ui-title" id="respuestaServidor" style="font-size:12px;"></p>
-        <form id="masDatos" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
-		<fieldset>	
-			<label for="descripcion">Descripcion de Incidencia:</label>
-			<textarea cols="40" rows="8" name="descripcion" id="descripcion"></textarea>
-			<label for="subtipos" class="select">Escoja Subtipo de Evento:</label>
-			<select name="subtipos" id="subtipos" data-native-menu="false">
-			    <option>Haga su seleccion</option>
-			    <option value="standard">Robo</option>
-			    <option value="rush">extorcion</option>
-			    <option value="express">Secuestro</option>
-			    <option value="overnight">Tiros</option>
-			</select>
-			<a href="#" id="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back">Enviar</a>
-			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back">Cerrar</a>
-		</fieldset>
-	</form>  
-    </div>
-</div>
 
 <div data-role="page" id="home">
 
@@ -300,6 +268,39 @@
 	</div>
 </div><!-- /page -->
 
+<div data-role="dialog" data-position-to="window" id="popupConfirm" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:300px;">
+    <div data-role="header" data-theme="a">
+    	<h1>Confirmacion Datos</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <h3 class="ui-title">Sus Datos se guardaron satisfactoriamente</h3>
+   		<p>Puede editar estos datos en el mismo formulario sustituyendo los viejos datos y volviendo a guardar.</p>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b cerrar" data-rel="back">Aceptar</a>
+    </div>
+</div>
+
+<div data-role="dialog"  data-position-to="window" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:300px;">
+    <div data-role="header" data-theme="a"><h1>Mensaje Recibido</h1></div>
+    <div role="main" class="ui-content">
+        <p class="ui-title" id="respuestaServidor" style="font-size:12px;"></p>
+        <form id="masDatos" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
+		<fieldset>	
+			<label for="descripcion">Descripcion de Incidencia:</label>
+			<textarea cols="40" rows="8" name="descripcion" id="descripcion"></textarea>
+			<label for="subtipos" class="select">Escoja Subtipo de Evento:</label>
+			<select name="subtipos" id="subtipos" data-native-menu="false">
+			    <option>Haga su seleccion</option>
+			    <option value="standard">Robo</option>
+			    <option value="rush">extorcion</option>
+			    <option value="express">Secuestro</option>
+			    <option value="overnight">Tiros</option>
+			</select>
+			<a href="#" id="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back">Enviar</a>
+			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back">Cerrar</a>
+		</fieldset>
+	</form>  
+    </div>
+</div>
 
 </body>
 	<script src="js/index.js"></script>	
