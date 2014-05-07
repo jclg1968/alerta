@@ -45,14 +45,17 @@ $(document).on('click', '.btn-home', function(event) {
 });
 
 $(document).on('click', '#submit', function() { 
-	//traemos los datos almacenados en local storage
+	var id 			= $('input#id').val();
+	var descripcion = $('input#descripcion').val();
+	var subtype 	= $('input#subtype').val();
+	var jsonData 	= JSON.stringify({"subtype": subtype, "id": id, "descripcion": descripcion });
     $.ajax({
     	 url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
     	//url: 'index.php',
 		//crossDomain:true,
         type: 'post',    
         dataType: 'json',    
-        data: $('form#masDatos').serialize(), 
+        data:'json='+jsonData ,
         //async: true,
         success: function (data) {
         		// $('#popupDialog').dialog( "close" );
