@@ -25,18 +25,18 @@ $(document).on('click', '.btn-home', function(event) {
 		};	
 		$.ajax({
 			type: "POST",
-			//url: 'http://192.168.1.139/our_mapper/assets/api.php',
+			url: 'http://192.168.1.139/our_mapper/assets/api.php',
 			url: 'index.php',
 			crossDomain:true,             
         	async: true,
 			data:'json='+jsonData ,
 			success: function( data ) {
-				/*
+				
 				var obj = jQuery.parseJSON(data);
 				var direccion = obj.direccion;
 				var id 		= obj.id;
 				var mitexto = "El id de incidencia es "+id+" Ud esta ubicado en "+direccion+".";
-				$('#respuestaServidor').html(mitexto);*/
+				$('#respuestaServidor').html(mitexto);
 				$('#formulario').append($('#form1'));
 				$.mobile.changePage( "#popupDialog", {	rel: "dialog", 
 					    								transition: "flip"
