@@ -45,17 +45,17 @@ $(document).on('click', '.btn-home', function(event) {
 });
 
 $(document).on('click', '#submit', function() { 
-	var id 			= $('input#id').val();
-	var descripcion = $('input#descripcion').val();
-	var subtype 	= $('input#subtype').val();
+	var id 			= $('#id').val();
+	var descripcion = $('#descripcion').val();
+	var subtype 	= $('#subtype').val();
 	var jsonData 	= JSON.stringify({"subtype": subtype, "id": id, "descripcion": descripcion });
     $.ajax({
-    	 url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
-    	//url: 'index.php',
+    	url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
+    	// url: 'index.php',
 		//crossDomain:true,
         type: 'post',    
         dataType: 'json',    
-        data:'json='+jsonData ,
+        data:'json2='+jsonData ,
         //async: true,
         success: function (data) {
         		// $('#popupDialog').dialog( "close" );
