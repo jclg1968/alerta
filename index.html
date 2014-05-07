@@ -10,32 +10,38 @@
 
 <body>
 
-<div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+<div data-role="dialog" data-position-to="window" id="popupConfirm" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:300px;">
     <div data-role="header" data-theme="a">
-    <h1>Mensaje Recibido</h1>
+    	<h1>Confirmacion Datos</h1>
     </div>
     <div role="main" class="ui-content">
-        <p class="ui-title" id="respuestaServidor" style="font-size:12px;"></p>
-        <div id="formulario"></div>
+        <h3 class="ui-title">Sus Datos se guardaron satisfactoriamente</h3>
+   		<p>Puede editar estos datos en el mismo formulario sustituyendo los viejos datos y volviendo a guardar.</p>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b cerrar" data-rel="back">Aceptar</a>
     </div>
 </div>
-<div id="form1">
-<form id="masDatos" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
-	<fieldset>	
-		<label for="descripcion">Descripcion de Incidencia:</label>
-		<textarea cols="40" rows="8" name="descripcion" id="descripcion"></textarea>
-		<label for="subtipos" class="select">Escoja Subtipo de Evento:</label>
-		<select name="subtipos" id="subtipos" data-native-menu="false">
-		    <option>Haga su seleccion</option>
-		    <option value="standard">Robo</option>
-		    <option value="rush">extorcion</option>
-		    <option value="express">Secuestro</option>
-		    <option value="overnight">Tiros</option>
-		</select>
-		<a href="#" id="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Enviar</a>
-		<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cerrar</a>
-	</fieldset>
-</form>     
+
+<div data-role="dialog"  data-position-to="window" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:300px;">
+    <div data-role="header" data-theme="a"><h1>Mensaje Recibido</h1></div>
+    <div role="main" class="ui-content">
+        <p class="ui-title" id="respuestaServidor" style="font-size:12px;"></p>
+        <form id="masDatos" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
+		<fieldset>	
+			<label for="descripcion">Descripcion de Incidencia:</label>
+			<textarea cols="40" rows="8" name="descripcion" id="descripcion"></textarea>
+			<label for="subtipos" class="select">Escoja Subtipo de Evento:</label>
+			<select name="subtipos" id="subtipos" data-native-menu="false">
+			    <option>Haga su seleccion</option>
+			    <option value="standard">Robo</option>
+			    <option value="rush">extorcion</option>
+			    <option value="express">Secuestro</option>
+			    <option value="overnight">Tiros</option>
+			</select>
+			<a href="#" id="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back">Enviar</a>
+			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back">Cerrar</a>
+		</fieldset>
+	</form>  
+    </div>
 </div>
 
 <div data-role="page" id="home">
@@ -87,15 +93,16 @@
 		    </a></li>
 		</ul>
 	</div><!-- /panel -->
+
 	<div data-role="header" data-theme="a" data-position="fixed">
-	<h3>ALERTA - Home</h3>
-	<div data-role="navbar">
-	    <ul>
-	        <li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
-	        <li><a href="#buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
-	        <li><a href="#config" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
-	    </ul>
-	</div><!-- /navbar -->
+		<h3>ALERTA - Home</h3>
+		<div data-role="navbar">
+		    <ul>
+		        <li><a href="#home" id="opt-home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
+		        <li><a href="#buscar" id="opt-buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
+		        <li><a href="#config" id="opt-configurar" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
+		    </ul>
+		</div><!-- /navbar -->
 	</div><!-- /header -->
 	<div role="main" class="ui-content">
 		<fieldset class="ui-grid-a">
@@ -185,9 +192,9 @@
 		<h1>ALERTA - Buscar</h1>
 		<div data-role="navbar">
 		    <ul>
-		        <li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
-		        <li><a href="#buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
-		        <li><a href="#config" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
+		        <li><a href="#home" id="opt-home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
+		        <li><a href="#buscar" id="opt-buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
+		        <li><a href="#config" id="opt-configurar" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
 		    </ul>
 		</div><!-- /navbar -->
 	</div><!-- /header -->
@@ -264,25 +271,23 @@
 		<h1>ALERTA - Configuracion</h1>
 		<div data-role="navbar">
 		    <ul>
-		        <li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
-		        <li><a href="#buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
-		        <li><a href="#config" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
+		        <li><a href="#home" id="opt-home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-bottom">Inicio</a></li>
+		        <li><a href="#buscar" id="opt-buscar" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-bottom">Buscar</a></li>
+		        <li><a href="#config" id="opt-configurar" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-bottom">Configurar</a></li>
 		    </ul>
 		</div><!-- /navbar -->
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<div class="ui-grid-b">
-		    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
-		    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
-		    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
-		    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
-		    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
-		    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
-		    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
-		    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
-		    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
-		</div><!-- /grid-c -->
+
+			<label for="nombre">Nombre completo:</label>
+			<input type="text" name="nombre" id="nombre" value="">
+			<label for="telefono">Telefono:</label>
+			<input type="text" name="telefono" id="telefono" value="">
+			<label for="email">Correo-e:</label>
+			<input type="text" name="email" id="email" value="">
+			
+			<a href="#" id="submit-personal-data" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Guardar Datos</a>
 	</div><!-- /content -->
 
 	<div data-role="footer" class="nav-glyphish-example" data-theme="b" data-position="fixed">
@@ -297,5 +302,5 @@
 
 
 </body>
-	<script src="js/index.js"></script>
+	<script src="js/index.js"></script>	
 </html>
