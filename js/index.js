@@ -55,7 +55,7 @@ $(document).on('click', '#submit', function() {
 		//crossDomain:true,
         type: 'post',    
         dataType: 'json',    
-        data:'json2='+jsonData ,
+        data:'json='+jsonData ,
         //async: true,
         success: function (data) {
         		// $('#popupDialog').dialog( "close" );
