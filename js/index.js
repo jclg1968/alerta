@@ -26,9 +26,7 @@ $(document).on('click', '.btn-home', function(event) {
 		$.ajax({
 			type: "POST",
 			url: 'http://192.168.1.139/our_mapper/assets/api.php',
-			url: 'index.php',
-			crossDomain:true,             
-        	async: true,
+			url: 'index.php',        	
 			data:'json='+jsonData ,
 			success: function( data ) {
 				
