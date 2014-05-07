@@ -25,12 +25,14 @@ $(document).on('click', '.btn-home', function(event) {
 		};	
 		$.ajax({
 			type: "POST",
-			url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',    	
+			url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
+			// url: 'index.php',
 			data:'json='+jsonData ,
 			success: function( data ) {				
 				var obj = jQuery.parseJSON(data);
 				var direccion = obj.direccion;
 				var id 		= obj.id;
+				$('#id').val(id);
 				var mitexto = "El id de incidencia es "+id+" Ud esta ubicado en "+direccion+".";
 				$('#respuestaServidor').html(mitexto);
 				$('#formulario').append($('#form1'));
@@ -45,31 +47,24 @@ $(document).on('click', '.btn-home', function(event) {
 $(document).on('click', '#submit', function() { 
 	//traemos los datos almacenados en local storage
     $.ajax({
-    	url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
-		crossDomain:true,
-        data: {action : 'sendDatos', formData : $('#masDatos').serialize()}, // Convert a form to a JSON string representation
-        type: 'post',                   
-        async: true,
-        beforeSend: function() {
-            // This callback function will trigger before data is sent
-            $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
-        },
-        complete: function() {
-            // This callback function will trigger on data sent/received complete
-            $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
-        },
-        success: function (result) {
-                resultObject.formSubmitionResult = result;
-                //$.mobile.changePage("#second");
+    	 url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
+    	//url: 'index.php',
+		//crossDomain:true,
+        type: 'post',    
+        dataType: 'json',    
+        data: $('form#masDatos').serialize(), 
+        //async: true,
+        success: function (data) {
+        		// $('#popupDialog').dialog( "close" );
+                $.mobile.changePage("#popupSendConfirm", {	rel: "dialog", 
+		    										transition: "flip"
+		    									});
         },
         error: function (request,error) {
             // This callback function will trigger on unsuccessful action                
             alert('Network error has occurred please try again!');
         }
     });                   
-            
-    $('[data-role=dialog]').dialog( "close" );   
-    return false; // cancel original event to prevent form submitting
 }); 
 
 $(document).on('click', '#submit-personal-data', function() {     
