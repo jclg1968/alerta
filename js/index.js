@@ -25,7 +25,7 @@ $(document).on('click', '.btn-home', function(event) {
 		};	
 		$.ajax({
 			type: "POST",
-			url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
+			url: 'http://192.168.1.139/our_mapper/assets/api.php',
 			url: 'index.php',
 			crossDomain:true,             
         	async: true,
@@ -49,7 +49,7 @@ $(document).on('click', '.btn-home', function(event) {
 $(document).on('click', '#submit', function() { 
 	//traemos los datos almacenados en local storage
     $.ajax({
-    	url: 'http://bithelion-mapper.jelastic.servint.net/mapper/assets/api.php',
+    	url: 'http://192.168.1.139/our_mapper/assets/api.php',
 		crossDomain:true,
         data: {action : 'sendDatos', formData : $('#masDatos').serialize()}, // Convert a form to a JSON string representation
         type: 'post',                   
